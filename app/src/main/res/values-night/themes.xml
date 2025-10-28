@@ -1,0 +1,18 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Theme.StadiumApp" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/md_theme_primary</item>
+        <item name="colorOnPrimary">@color/md_theme_onPrimary</item>
+        <item name="colorSecondary">@color/md_theme_secondary</item>
+        <item name="colorOnSecondary">@color/md_theme_onSecondary</item>
+        <item name="android:colorBackground">@color/md_theme_background</item>
+        <item name="colorOnBackground">@color/md_theme_onBackground</item>
+        <item name="colorSurface">@color/md_theme_surface</item>
+        <item name="colorOnSurface">@color/md_theme_onSurface</item>
+    </style>
+
+    <style name="Theme.StadiumApp.Splash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/md_theme_primary</item>
+        <item name="windowSplashScreenAnimatedIcon">@mipmap/ic_launcher_round</item>
+        <item name="postSplashScreenTheme">@style/Theme.StadiumApp</item>
+    </style>
+</resources>

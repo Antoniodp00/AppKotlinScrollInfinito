@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">StadiumApp</string>
+
+    <string name="welcome_message">Bienvenido a StadiumApp</string>
+    <string name="view_teams_button">Explorar Equipos</string>
+
+    <string name="stadium_location_label">Ubicación del Estadio</string>
+    <string name="official_web_label">Web Oficial</string>
+</resources>
