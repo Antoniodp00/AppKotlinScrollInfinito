@@ -13,7 +13,7 @@ data class ApiTeam(
     @SerializedName("strStadium") // Mapea "strStadium" a "stadium"
     val stadium: String?,
 
-    @SerializedName("strTeamBadge") // Mapea "strTeamBadge" (URL del escudo) a "logoUrl"
+    @SerializedName("strBadge") // Mapea "strTeamBadge" (URL del escudo) a "logoUrl"
     val logoUrl: String?,
 
     @SerializedName("strWebsite") // Mapea "strWebsite" a "website"

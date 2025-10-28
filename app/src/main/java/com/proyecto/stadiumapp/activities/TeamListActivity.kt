@@ -54,6 +54,8 @@ class TeamListActivity : AppCompatActivity() {
                 val apiResponse = RetrofitClient.instance.getTeamsByLeague("Spanish La Liga")
 
                 val mappedList = mapApiTeamsToTeams(apiResponse.teams)
+
+                Log.d("TeamListActivity", "Lista de equipos mapeada (${mappedList.size} equipos): $mappedList")
                 teamList.clear()
                 teamList.addAll(mappedList)
                 teamAdapter.notifyDataSetChanged()
@@ -80,12 +82,14 @@ class TeamListActivity : AppCompatActivity() {
             }
 
             val (lat, lon) = getCoordinatesFromApiTeam(apiTeam.name)
+            val logoUrlLimpia = (apiTeam.logoUrl ?: "").replace("/preview", "")
 
+            Log.d("TeamListActivity", "Mapeando: ${apiTeam.name}, Logo final: $logoUrlLimpia")
             appTeams.add(
                 Team(
                     name = apiTeam.name,
                     stadium = apiTeam.stadium,
-                    logoUrl = apiTeam.logoUrl ?: "",
+                    logoUrl = logoUrlLimpia,
                     latitude = lat,
                     longitude = lon,
                     webUrl = apiTeam.website ?: ""
@@ -118,6 +122,7 @@ class TeamListActivity : AppCompatActivity() {
             "Las Palmas" -> Pair(28.1065, -15.4264) // Estadio de Gran Canaria
             "Deportivo Alavés" -> Pair(42.8465, -2.671) // Mendizorroza
             "Girona" -> Pair(41.9796, 2.8016) // Estadi de Montilivi
+            "Levante" -> Pair(39.4936, -0.3319)
             else -> Pair(0.0, 0.0) // Coordenadas por defecto si no se encuentra el equipo
         }
     }
