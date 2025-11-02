@@ -6,4 +6,10 @@
 
     <string name="stadium_location_label">Ubicación del Estadio</string>
     <string name="official_web_label">Web Oficial</string>
+
+        <string name="team_logo_description">Description for the team logo</string>
+        <string name="open_web_button_text">Open Website</string>
+
+
+
 </resources>
