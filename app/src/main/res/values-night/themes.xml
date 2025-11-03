@@ -2,8 +2,8 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.StadiumApp" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Edge-to-edge -->
-        <item name="android:windowLightStatusBar">false</item>
-        <item name="android:windowLightNavigationBar" tools:targetApi="27">false</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="27">true</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:navigationBarColor">@android:color/transparent</item>
 
@@ -38,10 +38,10 @@
 
     <style name="Theme.StadiumApp" parent="Base.Theme.StadiumApp" />
 
-    <!-- Splash screen theme is usually the same for light and dark -->
+    <!-- Splash screen theme -->
     <style name="Theme.StadiumApp.Splash" parent="Theme.SplashScreen">
         <item name="windowSplashScreenBackground">@color/md_theme_surface</item>
-        <item name="windowSplashScreenAnimatedIcon">@mipmap/ic_launcher_round</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/icon_app_playstore</item>
         <item name="postSplashScreenTheme">@style/Theme.StadiumApp</item>
     </style>
 </resources>

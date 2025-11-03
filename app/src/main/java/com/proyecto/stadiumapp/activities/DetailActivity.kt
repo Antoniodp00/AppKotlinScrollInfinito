@@ -36,20 +36,18 @@ class DetailActivity : AppCompatActivity() {
         binding = ActivityDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Ajustar padding para el Edge-to-Edge
         ViewCompat.setOnApplyWindowInsetsListener(binding.root) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
 
-        // Configurar la Toolbar
+
         setupToolbar()
 
         // Configuración de OSMdroid
         Configuration.getInstance().load(applicationContext, getSharedPreferences("osmdroid", MODE_PRIVATE))
 
-        // 1. Obtener el objeto Team del Intent
         loadTeamData()
 
         if (team == null) {
@@ -58,13 +56,10 @@ class DetailActivity : AppCompatActivity() {
             return
         }
 
-        // 2. Poblar las Vistas
         populateViews()
 
-        // 3. Configurar el Mapa
         setupMap()
 
-        // 4. Configurar el botón para abrir la web
         setupOpenWebButton()
     }
 
@@ -151,28 +146,6 @@ class DetailActivity : AppCompatActivity() {
                     Toast.makeText(this, "No hay sitio web disponible", Toast.LENGTH_SHORT).show()
                 }
             }
-        }
-    }
-
-    /**
-     * Se llama cuando la actividad vuelve a estar en primer plano.
-     * Reanuda el mapa para que se actualice correctamente.
-     */
-    override fun onResume() {
-        super.onResume()
-        if (::mapView.isInitialized) {
-            mapView.onResume()
-        }
-    }
-
-    /**
-     * Se llama cuando la actividad pasa a segundo plano.
-     * Pausa el mapa para ahorrar recursos.
-     */
-    override fun onPause() {
-        super.onPause()
-        if (::mapView.isInitialized) {
-            mapView.onPause()
         }
     }
 }
