@@ -9,4 +9,4 @@ data class Team(
     val latitude: Double, // Coordenadas para el mapa
     val longitude: Double, // Coordenadas para el mapa
     val webUrl: String // URL de la web oficial del equipo
-) : Serializable // ¡Importante para pasar el objeto a DetailActivity!
+) : Serializable // Para pasar el objeto a DetailActivity!

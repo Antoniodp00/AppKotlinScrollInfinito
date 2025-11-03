@@ -10,7 +10,6 @@ import com.proyecto.stadiumapp.R
 import com.proyecto.stadiumapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-    //Declarar binding
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
